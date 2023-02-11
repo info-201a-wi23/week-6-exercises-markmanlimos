@@ -1,5 +1,6 @@
 ---
 title: "The Wealth Gap"
+author: "Mark Manlimos & Lily Bui"
 output: html_document
 ---
 
@@ -9,14 +10,17 @@ Here's a report about homeownership trends over time for different racial groups
 
 Each collaborator should make a different change -- make a line plot, add color, or hide the code.
 
-```{r}
+```{r, echo = FALSE}
 home_owner <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/home_owner.csv')
 
 # Load library
-# Your code here
 
+# Your code here
+library(ggplot2)
 # Make a line plot of the percentage of homeowners for racial categories over time
 # and color the plot by racial category
 
 # Your code here
+ggplot(data = home_owner) +
+  geom_line(mapping = aes(x = year, y = home_owner_pct, color = race))
 ```
